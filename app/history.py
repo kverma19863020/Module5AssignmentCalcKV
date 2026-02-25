@@ -1,6 +1,6 @@
-########################
-# History Management    #
-########################
+####################
+# History Management #
+###################
 
 from abc import ABC, abstractmethod
 import logging
@@ -11,10 +11,6 @@ from app.calculation import Calculation
 class HistoryObserver(ABC):
     """
     Abstract base class for calculator observers.
-
-    This class defines the interface for observers that monitor and react to
-    new calculation events. Implementing classes must provide an update method
-    to handle the received Calculation instance.
     """
 
     @abstractmethod
@@ -31,9 +27,6 @@ class HistoryObserver(ABC):
 class LoggingObserver(HistoryObserver):
     """
     Observer that logs calculations to a file.
-
-    Implements the Observer pattern by listening for new calculations and logging
-    their details to a log file.
     """
 
     def update(self, calculation: Calculation) -> None:
@@ -42,9 +35,6 @@ class LoggingObserver(HistoryObserver):
 
         This method is called whenever a new calculation is performed. It records
         the operation, operands, and result in the log file.
-
-        Args:
-            calculation (Calculation): The calculation that was performed.
         """
         if calculation is None:
             raise AttributeError("Calculation cannot be None")
@@ -54,14 +44,9 @@ class LoggingObserver(HistoryObserver):
             f"{calculation.result}"
         )
 
-
 class AutoSaveObserver(HistoryObserver):
     """
     Observer that automatically saves calculations.
-
-    Implements the Observer pattern by listening for new calculations and
-    triggering an automatic save of the calculation history if the auto-save
-    feature is enabled in the configuration.
     """
 
     def __init__(self, calculator: Any):
@@ -85,9 +70,6 @@ class AutoSaveObserver(HistoryObserver):
 
         This method is called whenever a new calculation is performed. If the
         auto-save feature is enabled, it saves the current calculation history.
-
-        Args:
-            calculation (Calculation): The calculation that was performed.
         """
         if calculation is None:
             raise AttributeError("Calculation cannot be None")

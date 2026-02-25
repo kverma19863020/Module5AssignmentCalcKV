@@ -12,7 +12,7 @@ from app.exceptions import OperationError, ValidationError
 from app.history import LoggingObserver, AutoSaveObserver
 from app.operations import OperationFactory
 
-# Fixture to initialize Calculator with a temporary directory for file paths
+# initialize Calculator with a temporary directory for file paths
 @pytest.fixture
 def calculator():
     with TemporaryDirectory() as temp_dir:
@@ -34,14 +34,13 @@ def calculator():
             # Return an instance of Calculator with the mocked config
             yield Calculator(config=config)
 
-# Test Calculator Initialization
+# Calculator Initialization
 
 def test_calculator_initialization(calculator):
     assert calculator.history == []
     assert calculator.undo_stack == []
     assert calculator.redo_stack == []
     assert calculator.operation_strategy is None
-
 # Test Logging Setup
 
 @patch('app.calculator.logging.info')
@@ -55,7 +54,7 @@ def test_logging_setup(logging_info_mock):
         calculator = Calculator(CalculatorConfig())
         logging_info_mock.assert_any_call("Calculator initialized with configuration")
 
-# Test Adding and Removing Observers
+# Adding and Removing Observers
 
 def test_add_observer(calculator):
     observer = LoggingObserver()
@@ -68,14 +67,14 @@ def test_remove_observer(calculator):
     calculator.remove_observer(observer)
     assert observer not in calculator.observers
 
-# Test Setting Operations
+# Setting Operations
 
 def test_set_operation(calculator):
     operation = OperationFactory.create_operation('add')
     calculator.set_operation(operation)
     assert calculator.operation_strategy == operation
 
-# Test Performing Operations
+# Performing Operations
 
 def test_perform_operation_addition(calculator):
     operation = OperationFactory.create_operation('add')
@@ -92,7 +91,7 @@ def test_perform_operation_operation_error(calculator):
     with pytest.raises(OperationError, match="No operation set"):
         calculator.perform_operation(2, 3)
 
-# Test Undo/Redo Functionality
+# Undo/Redo Functionality
 
 def test_undo(calculator):
     operation = OperationFactory.create_operation('add')
@@ -109,7 +108,7 @@ def test_redo(calculator):
     calculator.redo()
     assert len(calculator.history) == 1
 
-# Test History Management
+# History Management
 
 @patch('app.calculator.pd.DataFrame.to_csv')
 def test_save_history(mock_to_csv, calculator):
@@ -145,7 +144,7 @@ def test_load_history(mock_exists, mock_read_csv, calculator):
         pytest.fail("Loading history failed due to OperationError")
         
             
-# Test Clearing History
+# Clearing History
 
 def test_clear_history(calculator):
     operation = OperationFactory.create_operation('add')
@@ -156,7 +155,7 @@ def test_clear_history(calculator):
     assert calculator.undo_stack == []
     assert calculator.redo_stack == []
 
-# Test REPL Commands (using patches for input/output handling)
+# REPL Commands (using patches for input/output handling)
 
 @patch('builtins.input', side_effect=['exit'])
 @patch('builtins.print')

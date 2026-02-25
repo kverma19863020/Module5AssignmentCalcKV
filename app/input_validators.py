@@ -1,6 +1,6 @@
-########################
-# Input Validation     #
-########################
+##################
+# Input Validation #
+##################
 
 from dataclasses import dataclass
 from decimal import Decimal, InvalidOperation
@@ -15,14 +15,7 @@ class InputValidator:
     @staticmethod
     def validate_number(value: Any, config: CalculatorConfig) -> Decimal:
         """
-        Validate and convert input to Decimal.
-        
-        Args:
-            value: Input value to validate
-            config: Calculator configuration
-            
-        Returns:
-            Decimal: Validated and converted number
+        Validate and convert input to Decimal
             
         Raises:
             ValidationError: If input is invalid

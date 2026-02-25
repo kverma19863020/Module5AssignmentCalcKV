@@ -1,19 +1,15 @@
-########################
-# Operation Classes    #
-########################
+###################
+# Operation Classes #
+###################
 
 from abc import ABC, abstractmethod
 from decimal import Decimal
 from typing import Dict
 from app.exceptions import ValidationError
 
-
 class Operation(ABC):
     """
     Abstract base class for calculator operations.
-
-    Defines the interface for all arithmetic operations. Each operation must
-    implement the execute method and can optionally override operand validation.
     """
 
     @abstractmethod
@@ -38,9 +34,6 @@ class Operation(ABC):
     def validate_operands(self, a: Decimal, b: Decimal) -> None:
         """
         Validate operands before execution.
-
-        Can be overridden by subclasses to enforce specific validation rules
-        for different operations.
 
         Args:
             a (Decimal): First operand.

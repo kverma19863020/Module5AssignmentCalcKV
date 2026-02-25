@@ -1,6 +1,6 @@
-########################
-# Calculator Class      #
-########################
+##################
+# Calculator Class #
+###################
 
 from decimal import Decimal
 import logging
@@ -27,19 +27,11 @@ class Calculator:
     """
     Main calculator class implementing multiple design patterns.
 
-    This class serves as the core of the calculator application, managing operations,
-    calculation history, observers, configuration settings, and data persistence.
-    It integrates various design patterns to enhance flexibility, maintainability, and
-    scalability.
     """
 
     def __init__(self, config: Optional[CalculatorConfig] = None):
         """
         Initialize calculator with configuration.
-
-        Args:
-            config (Optional[CalculatorConfig], optional): Configuration settings for the calculator.
-                If not provided, default settings are loaded based on environment variables.
         """
         if config is None:
             # Determine the project root directory if no configuration is provided

@@ -1,6 +1,6 @@
-########################
-# Calculator REPL       #
-########################
+#################
+# Calculator REPL  #
+##################
 
 from decimal import Decimal
 import logging
@@ -14,9 +14,6 @@ from app.operations import OperationFactory
 def calculator_repl():
     """
     Command-line interface for the calculator.
-
-    Implements a Read-Eval-Print Loop (REPL) that continuously prompts the user
-    for commands, processes arithmetic operations, and manages calculation history.
     """
     try:
         # Initialize the Calculator instance

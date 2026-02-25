@@ -1,6 +1,6 @@
-########################
-# Calculator Config    #
-########################
+####################
+# Calculator Config  #
+#####################
 
 from dataclasses import dataclass
 from decimal import Decimal
@@ -27,23 +27,16 @@ def get_project_root() -> Path:
     Returns:
         Path: The root directory path of the project.
     """
-    # Get the directory of the current file (app/calculator_config.py)
+    # Get the directory of the current file 
     current_file = Path(__file__)
-    # Navigate up two levels to reach the project root (from app/calculator_config.py to project root)
+    # Navigate to reach the project root 
     return current_file.parent.parent
-
 
 @dataclass
 class CalculatorConfig:
     """
     Calculator configuration settings.
 
-    This class manages all configuration parameters required by the calculator
-    application, including directory paths, history size, auto-save preferences,
-    calculation precision, maximum input values, and default encoding.
-
-    Configuration can be set via environment variables or by passing parameters
-    directly to the class constructor.
     """
 
     def __init__(
@@ -97,7 +90,6 @@ class CalculatorConfig:
         self.default_encoding = default_encoding or os.getenv(
             'CALCULATOR_DEFAULT_ENCODING', 'utf-8'
         )
-
     @property
     def log_dir(self) -> Path:
         """
@@ -118,8 +110,6 @@ class CalculatorConfig:
         """
         Get history directory path.
 
-        Determines the directory path where calculation history files will be stored.
-
         Returns:
             Path: The history directory path.
         """
@@ -132,9 +122,6 @@ class CalculatorConfig:
     def history_file(self) -> Path:
         """
         Get history file path.
-
-        Determines the file path for storing calculation history in CSV format.
-
         Returns:
             Path: The history file path.
         """
@@ -147,9 +134,6 @@ class CalculatorConfig:
     def log_file(self) -> Path:
         """
         Get log file path.
-
-        Determines the file path for storing log entries.
-
         Returns:
             Path: The log file path.
         """
@@ -163,10 +147,8 @@ class CalculatorConfig:
         Validate configuration settings.
 
         Ensures that all configuration parameters meet the required criteria.
-        Raises ConfigurationError if any validation fails.
-
         Raises:
-            ConfigurationError: If any configuration parameter is invalid.
+            ConfigurationError
         """
         if self.max_history_size <= 0:
             raise ConfigurationError("max_history_size must be positive")

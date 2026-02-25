@@ -13,7 +13,6 @@ calculation_mock.operand2 = 3
 calculation_mock.result = 8
 
 # Test cases for LoggingObserver
-
 @patch('logging.info')
 def test_logging_observer_logs_calculation(logging_info_mock):
     observer = LoggingObserver()
@@ -28,7 +27,6 @@ def test_logging_observer_no_calculation():
         observer.update(None)  # Passing None should raise an exception as there's no calculation
 
 # Test cases for AutoSaveObserver
-
 def test_autosave_observer_triggers_save():
     calculator_mock = Mock(spec=Calculator)
     calculator_mock.config = Mock(spec=CalculatorConfig)

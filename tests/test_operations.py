@@ -14,10 +14,8 @@ from app.operations import (
     OperationFactory,
 )
 
-
 class TestOperation:
     """Test base Operation class functionality."""
-
     def test_str_representation(self):
         """Test that string representation returns class name."""
         class TestOp(Operation):
@@ -25,7 +23,6 @@ class TestOperation:
                 return a
 
         assert str(TestOp()) == "TestOp"
-
 
 class BaseOperationTest:
     """Base test class for all operations."""
@@ -56,7 +53,6 @@ class BaseOperationTest:
             with pytest.raises(error, match=error_message):
                 operation.execute(a, b)
 
-
 class TestAddition(BaseOperationTest):
     """Test Addition operation."""
 
@@ -74,7 +70,6 @@ class TestAddition(BaseOperationTest):
         },
     }
     invalid_test_cases = {}  # Addition has no invalid cases
-
 
 class TestSubtraction(BaseOperationTest):
     """Test Subtraction operation."""
@@ -94,7 +89,6 @@ class TestSubtraction(BaseOperationTest):
     }
     invalid_test_cases = {}  # Subtraction has no invalid cases
 
-
 class TestMultiplication(BaseOperationTest):
     """Test Multiplication operation."""
 
@@ -112,7 +106,6 @@ class TestMultiplication(BaseOperationTest):
         },
     }
     invalid_test_cases = {}  # Multiplication has no invalid cases
-
 
 class TestDivision(BaseOperationTest):
     """Test Division operation."""
@@ -134,7 +127,6 @@ class TestDivision(BaseOperationTest):
         },
     }
 
-
 class TestPower(BaseOperationTest):
     """Test Power operation."""
 
@@ -154,7 +146,6 @@ class TestPower(BaseOperationTest):
             "message": "Negative exponents not supported"
         },
     }
-
 
 class TestRoot(BaseOperationTest):
     """Test Root operation."""
@@ -180,7 +171,6 @@ class TestRoot(BaseOperationTest):
             "message": "Zero root is undefined"
         },
     }
-
 
 class TestOperationFactory:
     """Test OperationFactory functionality."""
