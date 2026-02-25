@@ -1,10 +1,8 @@
-# Module 5: Advanced Design Patterns and Data Management with pandas in Python
-
+# Module 5: Advanced Design Patterns and Data Management 
 ## Module Overview
 Welcome to **Module 5**, where you will elevate your Python programming expertise by exploring **Advanced Design Patterns** and mastering **Data Management** using the `pandas` library. Building upon the foundational Object-Oriented Programming (OOP) and testing techniques from previous modules, this module introduces sophisticated design patterns and emphasizes efficient data handling to create scalable and maintainable applications.
 
 Your primary textbook for this module is the provided codebase, organized with the following flat folder structure:
-
 ```
 app/
 ├── calculator_repl.py
@@ -25,9 +23,7 @@ tests/
 ├── test_input_validators.py
 ├── test_operations.py
 ```
-
 All Python modules are placed directly within the `app/` directory, promoting a flat and straightforward project structure. The `tests/` directory contains comprehensive unit and parameterized tests to verify the functionality and reliability of your application, ensuring robust and dependable performance.
-
 By studying and interacting with this code, you'll gain hands-on experience in implementing advanced design patterns, integrating the `pandas` library for data management, applying the DRY (Don't Repeat Yourself) principle, handling errors gracefully, and ensuring code reliability through thorough testing.
 
 ## Why Advanced Design Patterns and pandas?

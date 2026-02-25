@@ -1,10 +1,8 @@
 # Module 5: Advanced Object-Oriented Programming (OOP), Design Patterns, and Data Management in Python
-
 ## Module Overview
 Welcome to **Module 5**, where you will elevate your Python programming skills by delving deeper into **Object-Oriented Programming (OOP)**, exploring **design patterns**, and mastering **data management techniques** using libraries like `pandas` and handling `CSV` files. Building upon your foundational knowledge from previous modules, this module introduces more sophisticated OOP concepts, design patterns for scalable and maintainable code, and effective data handling strategies to manage and persist application state.
 
 Your primary textbook for this module is the provided codebase, organized with the following folder structure:
-
 ```
 app/
 ├── calculator.py

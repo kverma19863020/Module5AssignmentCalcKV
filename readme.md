@@ -1,30 +1,19 @@
 # 📦 Project Setup
-
 ---
-
 # 🧩 1. Install Homebrew (Mac Only)
-
 > Skip this step if you're on Windows.
-
 Homebrew is a package manager for macOS.  
 You’ll use it to easily install Git, Python, Docker, etc.
-
 **Install Homebrew:**
-
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
 **Verify Homebrew:**
-
 ```bash
 brew --version
 ```
-
 If you see a version number, you're good to go.
-
 ---
-
 # 🧩 2. Install and Configure Git
 
 ## Install Git
@@ -38,8 +27,7 @@ brew install git
 - **Windows**
 
 Download and install [Git for Windows](https://git-scm.com/download/win).  
-Accept the default options during installation.
-
+Accept the default options during installation
 **Verify Git:**
 
 ```bash
