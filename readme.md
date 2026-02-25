@@ -29,13 +29,10 @@ brew install git
 Download and install [Git for Windows](https://git-scm.com/download/win).  
 Accept the default options during installation
 **Verify Git:**
-
 ```bash
 git --version
 ```
-
 ---
-
 ## Configure Git Globals
 
 Set your name and email so Git tracks your commits properly:
